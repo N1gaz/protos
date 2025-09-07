@@ -1,4 +1,4 @@
-module github.com/N1gaz/auth-app/protos
+module github.com/N1gaz/protos
 
 go 1.25
 
