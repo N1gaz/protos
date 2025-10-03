@@ -1,0 +1,16 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  PROTO_FOLDER: ./proto
+  PROTO_PATH: ./proto/sso/sso.proto
+  GO_OUT: ./gen/go
+  GO_OPT: paths=source_relative
+  GO_GRPC_OUT: ./gen/go
+  GO_GRPC_OPT: paths=source_relative
+
+tasks:
+  generate:
+    cmds:
+      - protoc -I {{ .PROTO_FOLDER }} --go_out={{ .GO_OUT }} --go_opt={{ .GO_OPT }} --go-grpc_out={{ .GO_GRPC_OUT }} --go-grpc_opt={{ .GO_GRPC_OPT }} {{ .PROTO_PATH }}

@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "n1gaz.sso.v1;ssov1";
+
+service SSO {
+    rpc SignUp(SignUpRequest) returns (SignUpResponse);
+    rpc SignIn(SignInRequest) returns (SignInResponse);
+    rpc SignOut(SignOutRequest) returns (SignOutResponse);
+    rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+}
+
+message SignUpRequest {
+    string email = 1;
+    string username = 2;
+    string password = 3;
+}
+
+message SignUpResponse {
+    int64 user_id = 1;
+}
+
+message SignInRequest {
+    string email = 1;
+    string username = 2;
+    string password = 3;
+}
+
+message SignInResponse {
+    string auth_token = 1;
+    string refresh_token = 2;
+}
+
+message SignOutRequest {
+    string auth_token = 1;
+}
+
+message SignOutResponse {
+    bool success = 1;
+}
+
+message RefreshTokenRequest {
+    string refresh_token = 1;
+}
+
+message RefreshTokenResponse {
+    string auth_token = 1;
+    string refresh_token = 2;
+}
