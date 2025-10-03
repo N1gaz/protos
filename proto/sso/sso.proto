@@ -4,7 +4,7 @@ package auth;
 
 option go_package = "n1gaz.sso.v1;ssov1";
 
-service SSO {
+service Auth {
     rpc SignUp(SignUpRequest) returns (SignUpResponse);
     rpc SignIn(SignInRequest) returns (SignInResponse);
     rpc SignOut(SignOutRequest) returns (SignOutResponse);
