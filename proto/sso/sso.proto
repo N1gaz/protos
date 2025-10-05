@@ -7,7 +7,6 @@ option go_package = "n1gaz.sso.v1;ssov1";
 service Auth {
     rpc SignUp(SignUpRequest) returns (SignUpResponse);
     rpc SignIn(SignInRequest) returns (SignInResponse);
-    rpc SignOut(SignOutRequest) returns (SignOutResponse);
     rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
 }
 
@@ -31,14 +30,6 @@ message SignInRequest {
 message SignInResponse {
     string auth_token = 1;
     string refresh_token = 2;
-}
-
-message SignOutRequest {
-    string auth_token = 1;
-}
-
-message SignOutResponse {
-    bool success = 1;
 }
 
 message RefreshTokenRequest {
