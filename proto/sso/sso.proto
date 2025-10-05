@@ -25,6 +25,7 @@ message SignInRequest {
     string email = 1;
     string username = 2;
     string password = 3;
+    int64 appId = 4;
 }
 
 message SignInResponse {
