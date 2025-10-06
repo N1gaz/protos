@@ -28,7 +28,7 @@ message SignInRequest {
 }
 
 message SignInResponse {
-    string auth_token = 1;
+    string access_token = 1;
     string refresh_token = 2;
 }
 
@@ -37,6 +37,6 @@ message RefreshTokenRequest {
 }
 
 message RefreshTokenResponse {
-    string auth_token = 1;
+    string access_token = 1;
     string refresh_token = 2;
 }
